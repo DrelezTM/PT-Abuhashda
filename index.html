@@ -4,9 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PT Abuhashda & Co.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="./src/output.css" rel="stylesheet">
 </head>
-<body>
-    <h3 class="text-xl text-gray-700 font-bold">Hello World</h3>
+<body class="flex flex-col justify-center items-center font-merriweather-sans">
+    <nav class="w-full flex justify-between items-center fixed top-0 z-50">
+        <div class="w-full flex justify-between relative bg-white">
+            <a href="#" class="md:px-8 px-4 py-4">
+                <img src="./assets/logo.png" alt="Logo">
+            </a>
+            <div class="md:px-8 px-4 md:hidden p-4 flex justify-center items-center">
+                <button onclick="navbarClicked()">
+                    <i class="text-lg fa-solid fa-bars"></i>
+                </button>
+            </div>
+    
+            <ul class="md:flex flex-5 hidden h-full">
+                <li class="relative flex-1 after:content-[''] after:absolute after:right-[-1px] after:top-1/2 after:-translate-y-1/2 after:w-[3px] after:h-5 after:bg-white">
+                    <a class="md:py-6 w-full text-white h-full flex justify-center items-center bg-dark-orange" href="#">Home</a>
+                </li>
+                <li class="relative flex-1 after:content-[''] after:absolute after:right-[-1px] after:top-1/2 after:-translate-y-1/2 after:w-[3px] after:h-5 after:bg-white">
+                    <a class="w-full text-white h-full flex justify-center items-center bg-orange" href="#">Tentang Kami</a>
+                </li>
+                <li class="relative flex-1 after:content-[''] after:absolute after:right-[-1px] after:top-1/2 after:-translate-y-1/2 after:w-[3px] after:h-5 after:bg-white">
+                    <a class="w-full text-white h-full flex justify-center items-center bg-orange" href="#">Layanan & Produk</a>
+                </li>
+                <li class="relative flex-1 after:content-[''] after:absolute after:right-[-1px] after:top-1/2 after:-translate-y-1/2 after:w-[3px] after:h-5 after:bg-white">
+                    <a class="w-full text-white h-full flex justify-center items-center bg-orange" href="#">Galeri</a>
+                </li>
+                <li class="flex-1">
+                    <a class="w-full text-white h-full flex justify-center items-center bg-orange" href="#">Kontak</a>
+                </li>
+            </ul>
+        </div>
+
+        <ul class="md:hidden hidden absolute top-[69px] bg-orange w-full text-white" id="mobilebar">
+            <li class="p-4 border-t-1 border-white bg-dark-orange">
+                <a href="#">Home</a>
+            </li>
+            <li class="p-4 border-t-1 border-white">
+                <a href="#">Tentang Kami</a>
+            </li>
+            <li class="p-4 border-t-1 border-white">
+                <a href="#">Layanan & Produk</a>
+            </li>
+            <li class="p-4 border-t-1 border-white">
+                <a href="#">Galeri</a>
+            </li>
+            <li class="p-4 border-t-1 border-white">
+                <a href="#">Kontak</a>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="bg-[url('./assets/landing.jpg')] relative w-full h-screen bg-cover bg-center" style="background-image: url('./assets/landing.jpg');">
+        <div class="absolute inset-0 bg-gradient-to-r from-orange to-transparent w-[60%]"></div>
+        <div class="relative z-10 flex flex-col justify-center items-start h-full text-white gap-4 w-full px-8 md:px-24">
+            <h1 class="text-4xl font-bold text-left md:w-[400px]">
+                Tyres You Can Rely On. Solusi Ban Alat Berat dan Industri Anda!
+            </h1>
+            <p class="text-left text-lg md:w-[400px]">
+                Dengan pengalaman lebih dari 40 tahun, Abuhasdha menyediakan ban Off-The-Road (OTR), truk, bus, dan industri yang tangguh, berkualitas, dan didukung layanan teknis menyeluruh.
+            </p>
+
+            <div class="text-left flex gap-4">
+                <a class="bg-dark-orange px-5 py-3" href="#">Lihat Produk Kami</a>
+                <a class="bg-white px-5 py-3 text-dark-orange" href="#">Hubungi Kami</a>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        const mobilebar = document.getElementById('mobilebar');
+        const navbarClicked = () => {
+            mobilebar.classList.toggle('hidden');
+        }
+    </script>
 </body>
 </html>

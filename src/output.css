@@ -7,12 +7,21 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-gray-700: oklch(37.3% 0.034 259.733);
+    --color-black: #000;
+    --color-white: #fff;
+    --spacing: 0.25rem;
+    --text-lg: 1.125rem;
+    --text-lg--line-height: calc(1.75 / 1.125);
     --text-xl: 1.25rem;
     --text-xl--line-height: calc(1.75 / 1.25);
+    --text-4xl: 2.25rem;
+    --text-4xl--line-height: calc(2.5 / 2.25);
     --font-weight-bold: 700;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
+    --font-merriweather-sans: "Merriweather Sans", sans-serif;
+    --color-orange: #FF920F;
+    --color-dark-orange: #D4480D;
   }
 }
 @layer base {
@@ -164,8 +173,107 @@
   }
 }
 @layer utilities {
+  .absolute {
+    position: absolute;
+  }
+  .fixed {
+    position: fixed;
+  }
+  .relative {
+    position: relative;
+  }
+  .inset-0 {
+    inset: calc(var(--spacing) * 0);
+  }
+  .top-0 {
+    top: calc(var(--spacing) * 0);
+  }
+  .top-\[40px\] {
+    top: 40px;
+  }
+  .top-\[60px\] {
+    top: 60px;
+  }
+  .top-\[69px\] {
+    top: 69px;
+  }
+  .top-\[70px\] {
+    top: 70px;
+  }
+  .top-\[90px\] {
+    top: 90px;
+  }
+  .bottom-0 {
+    bottom: calc(var(--spacing) * 0);
+  }
+  .bottom-\[-10\] {
+    bottom: -10;
+  }
+  .bottom-\[-10px\] {
+    bottom: -10px;
+  }
+  .bottom-\[10\] {
+    bottom: 10;
+  }
+  .bottom-\[10px\] {
+    bottom: 10px;
+  }
+  .z-10 {
+    z-index: 10;
+  }
+  .z-50 {
+    z-index: 50;
+  }
+  .flex {
+    display: flex;
+  }
+  .hidden {
+    display: none;
+  }
   .table {
     display: table;
+  }
+  .h-\[60px\] {
+    height: 60px;
+  }
+  .h-\[400px\] {
+    height: 400px;
+  }
+  .h-full {
+    height: 100%;
+  }
+  .h-screen {
+    height: 100vh;
+  }
+  .w-\[60\%\] {
+    width: 60%;
+  }
+  .w-\[90\%\] {
+    width: 90%;
+  }
+  .w-\[90\] {
+    width: 90;
+  }
+  .w-\[100px\] {
+    width: 100px;
+  }
+  .w-\[300px\] {
+    width: 300px;
+  }
+  .w-\[400px\] {
+    width: 400px;
+  }
+  .w-full {
+    width: 100%;
+  }
+  .flex-1 {
+    flex: 1;
+  }
+  .flex-2 {
+    flex: 2;
+  }
+  .flex-5 {
+    flex: 5;
   }
   .border-collapse {
     border-collapse: collapse;
@@ -173,9 +281,120 @@
   .resize {
     resize: both;
   }
+  .flex-col {
+    flex-direction: column;
+  }
+  .flex-row {
+    flex-direction: row;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .items-start {
+    align-items: flex-start;
+  }
+  .justify-between {
+    justify-content: space-between;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .gap-4 {
+    gap: calc(var(--spacing) * 4);
+  }
   .border {
     border-style: var(--tw-border-style);
     border-width: 1px;
+  }
+  .border-t-1 {
+    border-top-style: var(--tw-border-style);
+    border-top-width: 1px;
+  }
+  .border-white {
+    border-color: var(--color-white);
+  }
+  .bg-black {
+    background-color: var(--color-black);
+  }
+  .bg-dark-orange {
+    background-color: var(--color-dark-orange);
+  }
+  .bg-orange {
+    background-color: var(--color-orange);
+  }
+  .bg-white {
+    background-color: var(--color-white);
+  }
+  .bg-gradient-to-r {
+    --tw-gradient-position: to right in oklab;
+    background-image: linear-gradient(var(--tw-gradient-stops));
+  }
+  .bg-\[url\(\'\.\/assets\/landing\.jpg\'\)\] {
+    background-image: url('./assets/landing.jpg');
+  }
+  .from-orange {
+    --tw-gradient-from: var(--color-orange);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .to-transparent {
+    --tw-gradient-to: transparent;
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .bg-cover {
+    background-size: cover;
+  }
+  .bg-center {
+    background-position: center;
+  }
+  .p-4 {
+    padding: calc(var(--spacing) * 4);
+  }
+  .px-4 {
+    padding-inline: calc(var(--spacing) * 4);
+  }
+  .px-5 {
+    padding-inline: calc(var(--spacing) * 5);
+  }
+  .px-6 {
+    padding-inline: calc(var(--spacing) * 6);
+  }
+  .px-8 {
+    padding-inline: calc(var(--spacing) * 8);
+  }
+  .px-10 {
+    padding-inline: calc(var(--spacing) * 10);
+  }
+  .py-2 {
+    padding-block: calc(var(--spacing) * 2);
+  }
+  .py-3 {
+    padding-block: calc(var(--spacing) * 3);
+  }
+  .py-4 {
+    padding-block: calc(var(--spacing) * 4);
+  }
+  .pt-4 {
+    padding-top: calc(var(--spacing) * 4);
+  }
+  .pb-5 {
+    padding-bottom: calc(var(--spacing) * 5);
+  }
+  .pb-8 {
+    padding-bottom: calc(var(--spacing) * 8);
+  }
+  .text-left {
+    text-align: left;
+  }
+  .font-merriweather-sans {
+    font-family: var(--font-merriweather-sans);
+  }
+  .text-4xl {
+    font-size: var(--text-4xl);
+    line-height: var(--tw-leading, var(--text-4xl--line-height));
+  }
+  .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
   }
   .text-xl {
     font-size: var(--text-xl);
@@ -185,8 +404,11 @@
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
   }
-  .text-gray-700 {
-    color: var(--color-gray-700);
+  .text-dark-orange {
+    color: var(--color-dark-orange);
+  }
+  .text-white {
+    color: var(--color-white);
   }
   .underline {
     text-decoration-line: underline;
@@ -195,11 +417,168 @@
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
   }
+  .after\:absolute {
+    &::after {
+      content: var(--tw-content);
+      position: absolute;
+    }
+  }
+  .after\:top-1\/2 {
+    &::after {
+      content: var(--tw-content);
+      top: calc(1/2 * 100%);
+    }
+  }
+  .after\:right-\[-1px\] {
+    &::after {
+      content: var(--tw-content);
+      right: -1px;
+    }
+  }
+  .after\:h-5 {
+    &::after {
+      content: var(--tw-content);
+      height: calc(var(--spacing) * 5);
+    }
+  }
+  .after\:w-\[3px\] {
+    &::after {
+      content: var(--tw-content);
+      width: 3px;
+    }
+  }
+  .after\:-translate-y-1\/2 {
+    &::after {
+      content: var(--tw-content);
+      --tw-translate-y: calc(calc(1/2 * 100%) * -1);
+      translate: var(--tw-translate-x) var(--tw-translate-y);
+    }
+  }
+  .after\:bg-white {
+    &::after {
+      content: var(--tw-content);
+      background-color: var(--color-white);
+    }
+  }
+  .after\:content-\[\'\'\] {
+    &::after {
+      --tw-content: '';
+      content: var(--tw-content);
+    }
+  }
+  .md\:flex {
+    @media (width >= 48rem) {
+      display: flex;
+    }
+  }
+  .md\:hidden {
+    @media (width >= 48rem) {
+      display: none;
+    }
+  }
+  .md\:w-\[400px\] {
+    @media (width >= 48rem) {
+      width: 400px;
+    }
+  }
+  .md\:items-center {
+    @media (width >= 48rem) {
+      align-items: center;
+    }
+  }
+  .md\:items-start {
+    @media (width >= 48rem) {
+      align-items: flex-start;
+    }
+  }
+  .md\:px-8 {
+    @media (width >= 48rem) {
+      padding-inline: calc(var(--spacing) * 8);
+    }
+  }
+  .md\:px-16 {
+    @media (width >= 48rem) {
+      padding-inline: calc(var(--spacing) * 16);
+    }
+  }
+  .md\:px-18 {
+    @media (width >= 48rem) {
+      padding-inline: calc(var(--spacing) * 18);
+    }
+  }
+  .md\:px-24 {
+    @media (width >= 48rem) {
+      padding-inline: calc(var(--spacing) * 24);
+    }
+  }
+  .md\:py-4 {
+    @media (width >= 48rem) {
+      padding-block: calc(var(--spacing) * 4);
+    }
+  }
+  .md\:py-5 {
+    @media (width >= 48rem) {
+      padding-block: calc(var(--spacing) * 5);
+    }
+  }
+  .md\:py-6 {
+    @media (width >= 48rem) {
+      padding-block: calc(var(--spacing) * 6);
+    }
+  }
+  .md\:py-8 {
+    @media (width >= 48rem) {
+      padding-block: calc(var(--spacing) * 8);
+    }
+  }
 }
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 @property --tw-border-style {
   syntax: "*";
   inherits: false;
   initial-value: solid;
+}
+@property --tw-gradient-position {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-from {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-via {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-to {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-stops {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-via-stops {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-from-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+@property --tw-gradient-via-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 50%;
+}
+@property --tw-gradient-to-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 100%;
 }
 @property --tw-font-weight {
   syntax: "*";
@@ -210,12 +589,45 @@
   inherits: false;
   initial-value: solid;
 }
+@property --tw-content {
+  syntax: "*";
+  initial-value: "";
+  inherits: false;
+}
+@property --tw-translate-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-translate-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-translate-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
       --tw-border-style: solid;
+      --tw-gradient-position: initial;
+      --tw-gradient-from: #0000;
+      --tw-gradient-via: #0000;
+      --tw-gradient-to: #0000;
+      --tw-gradient-stops: initial;
+      --tw-gradient-via-stops: initial;
+      --tw-gradient-from-position: 0%;
+      --tw-gradient-via-position: 50%;
+      --tw-gradient-to-position: 100%;
       --tw-font-weight: initial;
       --tw-outline-style: solid;
+      --tw-content: "";
+      --tw-translate-x: 0;
+      --tw-translate-y: 0;
+      --tw-translate-z: 0;
     }
   }
 }
