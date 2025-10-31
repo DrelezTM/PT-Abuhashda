@@ -304,6 +304,51 @@
         </div>
     </section>
 
+    <section class="bg-white w-full flex flex-col gap-18 bg-no-repeat bg-center bg-cover">
+        <div class="px-10 md:px-24 pt-18 pb-2">
+            <div class="relative overflow-hidden flex justify-center items-center">
+                <div class="w-full h-[3px] bg-dark-orange absolute bottom-1"></div>
+                <div class="bg-white relative w-fit px-3">
+                    <h3 class="text-3xl font-bold text-dark-orange text-center">Galeri Produk</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col justify-center items-center pt-2 pb-24">
+            <div class="relative w-[100vw] md:w-[85vw] overflow-hidden px-8 md:px-24">
+                <!-- Carousel Track -->
+                <div id="carousel-track" class="flex overflow-x-scroll snap-x snap-mandatory carousel-track scroll-smooth">
+                
+                    <!-- Slide 1 -->
+                    <div class="w-full flex flex-col gap-3 flex-shrink-0 snap-center px-4">
+                        <div class="flex flex-row gap-3">
+                            <img class="md:w-full w-[30%]" src="./assets/Mask group-2.png" alt="">
+                            <img class="md:w-full w-[70%]" src="./assets/Mask group-4.png" alt="">
+                            <img class="md:w-full w-[30%]" src="./assets/Mask group.png" alt="">
+                            <img class="md:w-full w-[70%]" src="./assets/Gemini_Generated_Image_z00hs1z00hs1z00h 1.png" alt="">
+                        </div>
+                        <div class="flex flex-row gap-3">
+                            <img class="md:w-full w-[70%]" src="./assets/Mask group-3.png" alt="">
+                            <img class="md:w-full w-[30%]" src="./assets/Mask group-5.png" alt="">
+                            <img class="md:w-full w-[70%]" src="./assets/Mask group-1.png" alt="">
+                            <img class="md:w-full w-[30%]" src="./assets/Gemini_Generated_Image_pfglnzpfglnzpfgl 1.png" alt="">
+                        </div>
+                    </div>
+    
+                    <div class="w-full flex flex-col gap-3 flex-shrink-0 snap-center px-4"></div>
+                </div>
+    
+                <!-- Tombol Navigasi -->
+                <button id="prevBtn" class="absolute left-10 md:left-32 top-1/2 -translate-y-1/2 bg-dark-orange text-white py-2 px-4 shadow-md cursor-pointer">
+                ◀
+                </button>
+                <button id="nextBtn" class="absolute right-10 md:right-32 top-1/2 -translate-y-1/2 bg-dark-orange text-white py-2 px-4 shadow-md cursor-pointer">
+                ▶
+                </button>
+            </div>
+        </div>
+    </section>
+
     <footer class="bg-dark-gray w-full flex flex-col gap-8">
         <div class="px-8 md:px-24 pt-12 pb-4">
             <div class="relative overflow-hidden flex justify-center items-center">
@@ -369,6 +414,20 @@
         const navbarClicked = () => {
             mobilebar.classList.toggle('hidden');
         }
+
+        const track = document.getElementById("carousel-track");
+        const slides = document.querySelectorAll("#carousel-track > div");
+        const slideWidth = slides[0].offsetWidth;
+        const nextBtn = document.getElementById("nextBtn");
+        const prevBtn = document.getElementById("prevBtn");
+
+        nextBtn.addEventListener("click", () => {
+            track.scrollBy({ left: slideWidth, behavior: "smooth" });
+        });
+
+        prevBtn.addEventListener("click", () => {
+            track.scrollBy({ left: -slideWidth, behavior: "smooth" });
+        });
     </script>
 </body>
 </html>
