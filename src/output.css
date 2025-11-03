@@ -292,9 +292,6 @@
   .w-\[80px\] {
     width: 80px;
   }
-  .w-\[90\%\] {
-    width: 90%;
-  }
   .w-\[100vw\] {
     width: 100vw;
   }
@@ -303,6 +300,9 @@
   }
   .w-\[300px\] {
     width: 300px;
+  }
+  .w-\[400px\] {
+    width: 400px;
   }
   .w-\[450px\] {
     width: 450px;
@@ -352,9 +352,6 @@
   }
   .grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-  .grid-cols-5 {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
   .flex-col {
     flex-direction: column;
